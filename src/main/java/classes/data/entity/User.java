@@ -48,4 +48,10 @@ public class User {
     @Getter
     @Setter
     private UserProfile userProfile;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "hotel_id", nullable = false)
+    @Getter
+    @Setter
+    private Hotel hotel;
 }

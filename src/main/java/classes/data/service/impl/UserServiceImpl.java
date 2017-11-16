@@ -4,7 +4,7 @@ import classes.data.detail.CustomUserDetail;
 import classes.data.dto.UserDto;
 import classes.data.entity.User;
 import classes.data.entity.UserProfile;
-import classes.data.repository.StudentRepository;
+import classes.data.repository.UserRepository;
 import classes.data.service.UserService;
 import classes.data.validation.exception.EmailExistsException;
 import classes.data.validation.exception.UserNameExistsException;
@@ -24,7 +24,7 @@ import java.util.List;
 public class UserServiceImpl implements UserDetailsService, UserService {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private UserRepository studentRepository;
 
     @Autowired
     private UserProfileServiceImpl userProfileService;
