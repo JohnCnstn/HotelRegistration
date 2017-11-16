@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 16px;
+  color: #555;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+
+  margin-top: 150px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 600px;
+  }
+}
+
+.form {
+  border: 1px solid rgba(147, 184, 189,0.8);
+	box-shadow:
+		0pt 2px 5px rgba(105, 108, 109,  0.7),
+		0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	border-radius: 5px;
+  padding: 18px 6% 60px 6%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway";
+  font-weight: 300;
+  color: #333;
+}
+
+p {
+  line-height: 28px;
+  margin-bottom: 25px;
+}
+
+.centered {
+  text-align: center;
+}
+
+#header-btn {
+  background-color:  #D9853B;
+  color: white;
+}
+
+a {
+  color: #f85c37;
+}
+
+a:hover, a:focus {
+  color: #7b7b7b;
+  text-decoration: none;
+  outline: 0;
+}
+
+.navbar {
+  font-weight: 800;
+  font-size: 14px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-default {
+    background-color: #74AFAD;
+}
+
+#headerWrap {
+  background-color: #ECECEA;
+  margin-top: -10px;
+  padding-top: 20px;
+  text-align: center;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 500px;
+  width: 100%;
+
+  background-size: 100%;
+
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+}
+.bordered-window {
+  border: 1px solid black;
+}
+
+#f {
+  background: #2d2d2d;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+#f i {
+  color: #bdbdbd;
+  font-size: 30px;
+  padding: 20px;
+}
+
+#f i:hover {
+  color: #ff7878;
+}
+
+.keeplogin{
+	margin-top: -5px;
+}
+
+.keeplogin label{
+	display: inline-block;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.keeplogin input#loginkeeping{
+	margin-right: 5px;
+}
+
+.keeplogin label{
+	width: 80%;
+}
