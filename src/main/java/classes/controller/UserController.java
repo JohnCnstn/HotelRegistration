@@ -19,4 +19,9 @@ public class UserController {
         model.addAttribute("list", hotelService.getAll());
         return "user";
     }
+
+    @RequestMapping(value = "/user/reg-hotel", method = RequestMethod.POST)
+    public String regHotel() {
+        return "registr-success";
+    }
 }
