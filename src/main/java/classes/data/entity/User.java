@@ -50,7 +50,7 @@ public class User {
     private UserProfile userProfile;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "hotel_id", nullable = false)
+    @JoinColumn(name = "hotel_id")
     @Getter
     @Setter
     private Hotel hotel;
