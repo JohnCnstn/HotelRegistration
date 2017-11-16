@@ -1,9 +1,11 @@
 package classes.data.service.impl;
 
 import classes.data.detail.CustomUserDetail;
+import classes.data.dto.HotelDto;
 import classes.data.dto.UserDto;
 import classes.data.entity.User;
 import classes.data.entity.UserProfile;
+import classes.data.repository.HotelRepository;
 import classes.data.repository.UserRepository;
 import classes.data.service.UserService;
 import classes.data.validation.exception.EmailExistsException;
@@ -22,6 +24,9 @@ import java.util.List;
 
 @Service("userServiceImpl")
 public class UserServiceImpl implements UserDetailsService, UserService {
+
+    @Autowired
+    private HotelRepository hotelRepository;
 
     @Autowired
     private UserRepository studentRepository;
@@ -68,6 +73,13 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     @Override
     public User getByUserName(String userName) {
         return studentRepository.findByUserName(userName);
+    }
+
+    @Override
+    public void registerHotel(User user, HotelDto hotelDto) {
+        hotelRepository.findOne(hotelDto.getId());
+        user.setHotel(hotelRepository.findOne(hotelDto.getId()));
+        studentRepository.save(user);
     }
 
     @Override
