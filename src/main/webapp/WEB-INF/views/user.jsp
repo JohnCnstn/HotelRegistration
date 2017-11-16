@@ -40,16 +40,20 @@
     <table class="tablesorter" id="keywords" cellspacing="0" cellpadding="0">
         <thead>
         <tr>
-            <th><span>First Name</span></th>
-            <th><span>Second Name</span></th>
+            <th><span>Hotel Name</span></th>
+            <th><span>Register</span></th>
         </tr>
         </thead>
         <tbody>
 
-            <c:forEach items="${listOfStudents}" var="i">
+            <c:forEach items="${list}" var="i">
                 <tr>
-                    <td>${i.firstName}</td>
-                    <td>${i.lastName}</td>
+                    <td>${i.name}</td>
+                    <td>
+                        <button type="submit" class="btn navbar-btn">
+                            Logout
+                        </button>
+                    </td>
                 </tr>
             </c:forEach>
 
