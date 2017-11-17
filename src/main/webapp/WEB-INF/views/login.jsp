@@ -39,6 +39,11 @@
         <div col-lg-4 col-lg-offset-8>
             <div id = "login">
 
+                <span style="float: right">
+                    <a href="?lang=en">en</a>
+                    <a href="?lang=ru">ru</a>
+                </span>
+
                 <h1>Sign in</h1>
                 <div class="form-group">
                     <label for="userName"><spring:message code="username"/>:</label>
