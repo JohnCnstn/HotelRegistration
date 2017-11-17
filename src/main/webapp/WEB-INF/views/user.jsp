@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
     <head>
@@ -41,21 +42,20 @@
                 <thead>
                 <tr>
                     <th><span>Hotel Name</span></th>
-                    <th><span>Register</span></th>
                 </tr>
                 </thead>
                 <tbody>
 
                     <c:forEach items="${list}" var="i">
                         <tr>
-                            <td>${i.name}</td>
                             <td>
-                                <form:form action="/user/reg-hotel" method="post">
-                                    <button type="submit" class="btn navbar-btn">
-                                        Reg
-                                    </button>
-                                </form:form>
+                                ${i.name}
                             </td>
+                            <td>
+                                <spring:url value="/user/${i.id}" var="userUrl" />
+
+                                <button class="btn btn-info"
+                                        onclick="location.href='${userUrl}'">Query</button>
                         </tr>
                     </c:forEach>
 

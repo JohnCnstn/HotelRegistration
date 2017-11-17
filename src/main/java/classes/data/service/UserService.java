@@ -9,9 +9,10 @@ import classes.data.validation.exception.UserNameExistsException;
 import java.util.List;
 
 public interface UserService {
-    User getByName(String name);
+    void save(User user);
     User getByUserName(String userName);
     void registerHotel(User user, HotelDto hotelDto);
     User registerNewUserAccount(UserDto accountDto) throws UserNameExistsException, EmailExistsException;
+    User findOne(long id);
     List<User> getAll();
 }

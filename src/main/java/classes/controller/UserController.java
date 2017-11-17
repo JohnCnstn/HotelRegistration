@@ -2,7 +2,6 @@ package classes.controller;
 
 import classes.data.detail.CustomUserDetail;
 import classes.data.dto.HotelDto;
-import classes.data.dto.UserDto;
 import classes.data.entity.User;
 import classes.data.service.HotelService;
 import classes.data.service.UserService;
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,10 +28,10 @@ public class UserController {
         return "user";
     }
 
-    @RequestMapping(value = "/user/reg-hotel", method = RequestMethod.POST)
-    public String regHotel() {
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public String regHotel(@PathVariable("id") int id) {
         HotelDto hotelDto = new HotelDto();
-        hotelDto.setId(1);
+        hotelDto.setId(id);
         registerHotel(getPrincipal(), hotelDto);
         return "registr-success";
     }

@@ -66,8 +66,8 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     }
 
     @Override
-    public User getByName(String name) {
-        return studentRepository.findByName(name);
+    public void save(User user) {
+        studentRepository.save(user);
     }
 
     @Override
@@ -111,6 +111,11 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         user.setUserProfile(userProfileService.getByType("USER"));
 
         return studentRepository.save(user);
+    }
+
+    @Override
+    public User findOne(long id) {
+        return studentRepository.findOne(id);
     }
 
     private boolean userNameExists(String userName) {

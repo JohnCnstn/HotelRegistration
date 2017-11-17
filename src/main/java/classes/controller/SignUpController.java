@@ -6,6 +6,7 @@ import classes.data.validation.exception.EmailExistsException;
 import classes.data.validation.exception.UserNameExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,19 +37,15 @@ public class SignUpController {
             @Valid @ModelAttribute("user") UserDto accountDto,
             BindingResult result) {
 
-        ModelAndView model = new ModelAndView();
-
         if (!result.hasErrors()) {
             createUserAccount(accountDto, result);
         }
 
         if (result.hasErrors()) {
-            model.setViewName("sign-up");
+            return new ModelAndView("/sign-up");
         } else {
-            model.setViewName("user");
+            return new ModelAndView("/login");
         }
-        model.addObject("user", accountDto);
-        return model;
     }
 
     private void createUserAccount(UserDto accountDto, BindingResult result) {
