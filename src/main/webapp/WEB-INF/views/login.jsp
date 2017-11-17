@@ -41,11 +41,11 @@
 
                 <h1>Sign in</h1>
                 <div class="form-group">
-                    <label for="userName">Your email or username:</label>
+                    <label for="userName"><spring:message code="username"/>:</label>
                     <input type="text" name="username-signin" class="form-control" id="userName" required="required" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <label for="password">Your password:</label>
+                    <label for="password"><spring:message code="password"/>:</label>
                     <input type="password" name="password-signin" class="form-control" id="password" required="required" placeholder="Password">
                 </div>
 
